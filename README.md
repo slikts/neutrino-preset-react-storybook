@@ -10,7 +10,7 @@ This preset sets up react storybook webpack entries and plugins to allow non-dup
 
 ## Usage
 
-1. Configure preset
+### 1. Configure preset
 
     // .neutrinorc.js
     module.exports = {
@@ -20,7 +20,7 @@ This preset sets up react storybook webpack entries and plugins to allow non-dup
         ],
     }
 
-2. Add package script
+### 2. Add package script
 
 
     {
@@ -34,7 +34,7 @@ This preset sets up react storybook webpack entries and plugins to allow non-dup
     }
 
 
-3. Create standard [storybook config file](https://github.com/storybooks/storybook/blob/v3.4.11/docs/src/pages/basics/guide-react/index.md#create-the-config-file)
+### 3. Create standard [storybook config file](https://github.com/storybooks/storybook/blob/v3.4.11/docs/src/pages/basics/guide-react/index.md#create-the-config-file)
 
 &nbsp;
 
