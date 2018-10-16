@@ -1,0 +1,30 @@
+{
+  "name": "@usertech/neutrino-preset-react-storybook",
+  "version": "0.0.1",
+  "main": "build/index.js",
+  "license": "MIT",
+  "scripts": {
+    "lint": "neutrino lint"
+  },
+  "devDependencies": {
+    "@usertech/neutrino-preset-eslint-prettier": "usertech/neutrino-preset-eslint-prettier#0.0.3",
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.4.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.11.1",
+    "neutrino": "^8.3.0",
+    "prettier": "^1.14.2"
+  },
+  "peerDependencies": {
+    "@storybook/react": "3.4.11",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-runtime": "^6.26.0"
+  }
+}
