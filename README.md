@@ -36,19 +36,18 @@ This preset sets up react storybook webpack entries and plugins to allow non-dup
 
 ### 3. Create standard [storybook config file](https://github.com/storybooks/storybook/blob/v3.4.11/docs/src/pages/basics/guide-react/index.md#create-the-config-file)
 
-&nbsp;
+```
+$ mkdir .storybook
+$ touch .storybook/config.js
+```
 
-    $ mkdir .storybook
-    $ touch .storybook/config.js
+```
+// .storybook/config.js
+import { configure } from '@storybook/react';
 
-&nbsp;
+function loadStories() {
+    require('../stories/index.js');
+}
 
-    // .storybook/config.js
-    import { configure } from '@storybook/react';
-
-    function loadStories() {
-    	require('../stories/index.js');
-    }
-
-    configure(loadStories, module);
-
+configure(loadStories, module);
+```
