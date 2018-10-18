@@ -45,8 +45,10 @@ $ touch .storybook/config.js
 // .storybook/config.js
 import { configure } from '@storybook/react';
 
+// Load all files from stories directory
+const req = require.context('../stories', true, /\.js$/);
 function loadStories() {
-    require('../stories/index.js');
+	req.keys().forEach(req);
 }
 
 configure(loadStories, module);
