@@ -11,24 +11,31 @@ module.exports = (neutrino) => {
 
 		const indexEntry = config.entryPoints.get('index');
 		config.entryPoints.clear();
+
 		previewEntry.forEach((e, index) => {
 			// magic, magic - include only polyfills and globals entries from storybook config
 			if (index < 2) {
 				config.entry('preview').add(e);
 			}
 		});
-		indexEntry.values().forEach((e) => {
-			// magic, magic - exclude all app entries
-			if (/node_modules/.test(e)) {
-				config.entry('preview').add(e);
-			}
-		});
-		config.entry('preview').add(require.resolve(path.resolve(process.cwd(), './.storybook/config.js')));
+		if (indexEntry) {
+			indexEntry.values().forEach((e) => {
+				// magic, magic - exclude all app entries
+				if (/node_modules/.test(e)) {
+					config.entry('preview').add(e);
+				}
+			});
+		}
+		config
+			.entry('preview')
+			.add(require.resolve(path.resolve(process.cwd(), './.storybook/config.js')));
 		managerEntry.forEach((e, index) => {
 			// magic, magic - insert addons module right before last entrypoint
 			if (index === managerEntry.length - 1) {
 				try {
-					config.entry('manager').add(require.resolve(path.resolve(process.cwd(), './.storybook/addons.js')));
+					config
+						.entry('manager')
+						.add(require.resolve(path.resolve(process.cwd(), './.storybook/addons.js')));
 				} catch (e) {
 					console.log('Not loading addons');
 				}
